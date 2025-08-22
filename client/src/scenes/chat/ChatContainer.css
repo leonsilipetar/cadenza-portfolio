@@ -1,0 +1,35 @@
+.youtube-embed,
+.spotify-embed,
+.apple-music-embed {
+  margin: 8px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 100%;
+  background: var(--pozadina);
+}
+
+.youtube-embed iframe,
+.spotify-embed iframe,
+.apple-music-embed iframe {
+  display: block;
+  border: none;
+  width: 100%;
+}
+
+.youtube-link,
+.spotify-link,
+.apple-music-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--tekst);
+  text-decoration: none;
+  font-size: 0.9em;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.youtube-link:hover,
+.spotify-link:hover,
+.apple-music-link:hover {
+  opacity: 1;
+} 

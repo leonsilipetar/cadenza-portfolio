@@ -1,0 +1,400 @@
+CADENZA - MUSIC SCHOOL MANAGEMENT SYSTEM
+=====================================
+
+CORE SYSTEM INFORMATION
+----------------------
+Type: Progressive Web Application (PWA)
+Stack: PERN (PostgreSQL, Express, React, Node.js)
+Target Users: Music schools, mentors, and students
+Distribution: Three private music schools (Music art incubator)
+
+PROJECT SCOPE
+------------
+- Music education management system
+- Multi-tenant architecture
+- Real-time collaboration platform
+- Educational resource management
+- Financial tracking system
+
+CODE STATISTICS
+--------------
+Total Files: 260
+Total Lines of Code: 70,063
+- Code: 62,497
+- Comments: 1,903
+- Blank Lines: 5,663
+
+Language Distribution:
+- JSON: 22,486 lines (9 files)
+- JavaScript JSX: 18,980 lines (72 files)
+- JavaScript: 14,095 lines (145 files)
+- CSS: 6,827 lines (28 files)
+- HTML: 99 lines (3 files)
+- Markdown: 6 lines (2 files)
+- TypeScript: 4 lines (1 file)
+
+Main Components:
+- Client-side: 40,002 lines (126 files)
+- Server-side: 19,878 lines (129 files)
+
+Key Component Sizes:
+Client:
+- React Components: ~5,337 lines
+- Scenes/Pages: ~16,450 lines
+- Styles: ~1,135 lines
+- Utils: ~327 lines
+- Services: ~225 lines
+
+Server:
+- Controllers: ~5,897 lines
+- Routes: ~2,067 lines
+- Models: ~1,662 lines
+- Migrations: ~1,931 lines
+- Utils: ~349 lines
+
+Largest Components:
+Client:
+- Chat Container: ~975 lines
+- Documents Page: ~1,501 lines
+- RacuniAdmin: ~1,265 lines
+- Chat Page: ~1,259 lines
+
+Server:
+- User Routes: ~995 lines
+- User Controller: ~778 lines
+- Mentor Controller: ~844 lines
+- Message Controller: ~641 lines
+
+DEVELOPMENT ENVIRONMENT
+---------------------
+Build & Development:
+- Version Control: Git
+- Package Manager: npm
+- Build Tool: Vite
+- Testing Framework: Jest
+- Database: PostgreSQL
+- ORM: Sequelize
+- API Documentation: Swagger
+- Code Quality: ESLint
+- Styling: CSS Modules & Standard CSS
+
+Development Tools:
+- Firebase Admin SDK
+- Socket.io
+- WebRTC
+- PDF Generation Tools
+- Analytics Integration
+
+CORE FEATURES
+------------
+
+1. AUTHENTICATION & USER MANAGEMENT
+---------------------------------
+- Multi-role system (Admin, Mentor, Student)
+- User profiles with profile pictures
+- Firebase authentication integration
+- Session management
+- Terms and conditions acceptance flow
+
+2. EDUCATIONAL MANAGEMENT
+------------------------
+Program/Course Management:
+- Multiple program types support
+- Program assignments to mentors
+- Program details and tracking
+
+Classroom Management:
+- Classroom allocation
+- Classroom scheduling
+- Capacity management
+
+3. SCHEDULING SYSTEM
+-------------------
+Schedule Management:
+- Individual lesson scheduling
+- Group lesson scheduling
+- Theory class scheduling
+- Week type management
+- Schedule conflict detection
+
+Calendar Features:
+- Full schedule view
+- Day view
+- Schedule settings
+- Schedule analytics
+
+4. COMMUNICATION PLATFORM
+------------------------
+Chat System:
+- Individual messaging
+- Group chats
+- Real-time messaging (Socket.io)
+- Message status tracking
+- Unread message indicators
+
+Video Calls:
+- WebRTC integration
+- Real-time video communication
+- Call status management
+
+Notification System:
+- Real-time notifications
+- Push notifications
+- Notification preferences
+- Notification cleanup automation
+
+5. DOCUMENT MANAGEMENT
+---------------------
+Document System:
+- Document creation
+- Document sharing
+- Document editing
+- Access control
+- Version tracking
+
+File Types Support:
+- PDF support
+- Document templates
+- Rich text editing
+
+6. FINANCIAL MANAGEMENT
+----------------------
+Invoice System:
+- Invoice generation
+- Invoice templates
+- PDF417 barcode support
+- Payment tracking
+- Unpaid invoice tracking
+
+Invoice Settings:
+- Customizable invoice settings
+- School-specific configurations
+- Payment terms management
+
+7. ANALYTICS & REPORTING
+-----------------------
+Analytics Dashboard:
+- Usage analytics
+- Performance metrics
+- Attendance tracking
+- User engagement metrics
+
+Error Reporting:
+- Error tracking
+- Error reporting system
+- Support ticket system
+
+8. ADMINISTRATIVE FEATURES
+-------------------------
+School Management:
+- Multi-school support
+- School-specific settings
+- Resource allocation
+
+User Administration:
+- User creation/management
+- Role assignment
+- Access control
+- Bulk operations
+
+9. ADDITIONAL FEATURES
+---------------------
+Polling System:
+- Poll creation
+- Response tracking
+- Results visualization
+
+Post Management:
+- Announcement system
+- Content management
+- Rich text support
+
+10. TECHNICAL FEATURES
+---------------------
+Progressive Web App:
+- Offline support
+- Install prompts
+- Service worker integration
+- Push notifications
+
+Security:
+- Rate limiting
+- CORS protection
+- Error handling
+- Data encryption
+- Token management
+
+Performance:
+- Lazy loading
+- Resource optimization
+- Caching strategies
+
+INTEGRATION POINTS
+----------------
+- Firebase (Authentication & Cloud Services)
+- WebRTC (Video Calls)
+- Socket.io (Real-time Communication)
+- PDF Generation Services
+- Analytics Services
+
+DATA MODELS
+----------
+Key entities in the system:
+- Users
+- Mentors
+- Programs
+- Classrooms
+- Documents
+- Messages
+- Notifications
+- Invoices
+- Schedules
+- Groups
+- Posts
+- Polls
+- Analytics
+- Error Reports 
+
+DEPLOYMENT & INFRASTRUCTURE
+-------------------------
+Environment Support:
+- Development
+- Production
+- Testing
+
+Configuration Management:
+- Environment variables
+- Database configurations
+- Server configurations
+- Client configurations
+
+Database Management:
+- Sequelize migrations
+- Data seeding
+- Relationship management
+- Soft delete support
+
+API ARCHITECTURE
+---------------
+REST API Endpoints:
+- Authentication routes
+- User management
+- Educational resources
+- Communication endpoints
+- Document management
+- Financial operations
+- Analytics and reporting
+
+WebSocket Endpoints:
+- Real-time chat
+- Notifications
+- Video call signaling
+- Status updates
+
+TESTING & QUALITY ASSURANCE
+--------------------------
+- Unit testing
+- Integration testing
+- Error handling
+- Input validation
+- Security testing
+- Performance monitoring
+
+MAINTENANCE & MONITORING
+-----------------------
+- Error logging
+- Performance tracking
+- Usage analytics
+- Automated cleanup tasks
+- Background jobs
+- Service worker updates 
+
+FRONTEND ARCHITECTURE
+-------------------
+State Management:
+- Context API
+- Redux Store
+- Local State
+- Socket State
+
+UI Components:
+- Custom Components
+- Rich Text Editors
+- PDF Viewers
+- Video Call Interface
+- Chat Interface
+- Calendar Components
+- Form Components
+
+Styling Architecture:
+- CSS Modules
+- Global Styles
+- Component-specific Styles
+- Responsive Design
+- Theme Support
+
+DATABASE ARCHITECTURE
+-------------------
+Tables & Relations:
+- User Management Tables
+- Educational Program Tables
+- Communication Tables
+- Document Management Tables
+- Financial Records Tables
+- Analytics Tables
+- System Configuration Tables
+
+Database Features:
+- Foreign Key Constraints
+- Indexes
+- Soft Delete
+- Audit Trails
+- Data Validation
+
+SECURITY IMPLEMENTATION
+----------------------
+Authentication:
+- Firebase Auth
+- JWT Tokens
+- Session Management
+- Role-based Access
+
+Data Protection:
+- Encryption at Rest
+- Secure Communication
+- Input Sanitization
+- XSS Protection
+- CSRF Protection
+
+Access Control:
+- Role-based Permissions
+- Resource-level Access
+- API Rate Limiting
+- Request Validation
+
+THIRD-PARTY INTEGRATIONS
+-----------------------
+- Firebase
+  - Authentication
+  - Cloud Storage
+  - Push Notifications
+- WebRTC Services
+- PDF Processing
+- Analytics Services
+- Payment Processing
+- Email Services
+
+DEPLOYMENT ARCHITECTURE
+----------------------
+Client Deployment:
+- Static File Hosting
+- CDN Integration
+- Service Worker Configuration
+- Cache Management
+
+Server Deployment:
+- Node.js Runtime
+- Database Server
+- WebSocket Server
+- File Storage
+- Background Workers 

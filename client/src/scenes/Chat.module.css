@@ -1,0 +1,18 @@
+.rate-limited {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background-color: var(--background-disabled);
+}
+
+.rate-limited::placeholder {
+  color: var(--text-secondary);
+}
+
+.message-input-field.rate-limited {
+  border-color: var(--error);
+}
+
+.send-button.rate-limited {
+  background-color: var(--background-disabled);
+  color: var(--text-secondary);
+} 

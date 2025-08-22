@@ -1,0 +1,133 @@
+.cookie-consent {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.cookie-content {
+  background: #fff;
+  max-width: 500px;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cookie-content h3 {
+  color: #333;
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+}
+
+.cookie-content p {
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.cookie-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.cookie-button {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.cookie-button.primary {
+  background: #FCA311;
+  color: white;
+}
+
+.cookie-button.secondary {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.cookie-button:hover {
+  opacity: 0.9;
+}
+
+.cookie-settings {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.cookie-option {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #f8f8f8;
+  border-radius: 4px;
+}
+
+.cookie-option label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.cookie-option p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.cookie-footer {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.cookie-footer a {
+  color: #FCA311;
+  text-decoration: none;
+}
+
+.cookie-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Dark theme support */
+.dark .cookie-content {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.dark .cookie-content h3 {
+  color: #fff;
+}
+
+.dark .cookie-content p {
+  color: #ccc;
+}
+
+.dark .cookie-option {
+  background: #2a2a2a;
+}
+
+.dark .cookie-option p {
+  color: #ccc;
+}
+
+.dark .cookie-button.secondary {
+  background: #333;
+  color: #fff;
+} 

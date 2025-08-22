@@ -1,0 +1,129 @@
+.poll-indicator {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--iznad);
+  border-radius: var(--radius);
+  box-shadow: var(--boxShadow);
+  padding: 1rem;
+  min-width: 200px;
+  z-index: 1000;
+  cursor: move;
+  border: 1px solid rgba(var(--isticanje), 0.2);
+  transition: all 0.3s ease;
+}
+
+.poll-indicator.minimized {
+  min-width: auto;
+  padding: 0.5rem;
+}
+
+.poll-indicator-close {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: rgb(var(--crvena));
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  z-index: 2;
+}
+
+.poll-indicator-minimize {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  background: rgb(var(--isticanje));
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  z-index: 2;
+}
+
+.poll-indicator-content {
+  cursor: pointer;
+}
+
+.poll-indicator-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: rgb(var(--tekst));
+  font-weight: 500;
+}
+
+.poll-icon {
+  font-size: 1.2rem;
+  color: rgb(var(--isticanje));
+}
+
+.poll-indicator-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.stat-label {
+  color: rgba(var(--tekst), 0.7);
+}
+
+.stat-value {
+  font-weight: 500;
+  color: rgb(var(--tekst));
+}
+
+.poll-indicator-mini {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgb(var(--isticanje));
+  font-size: 1.2rem;
+}
+
+.poll-count {
+  background: rgb(var(--isticanje));
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+/* Animation for the indicator */
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.poll-indicator {
+  animation: slideIn 0.3s ease-out;
+} 

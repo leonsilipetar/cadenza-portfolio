@@ -1,0 +1,102 @@
+.text-editor-container {
+  margin-bottom: 2rem;
+  border-radius: 4px;
+  background: var(--iznad);
+  border: 1px solid beige;
+}
+
+.tiptap-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tiptap-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: var(--iznad);
+}
+
+.tiptap-toolbar .action-btn {
+  padding: 0.5rem;
+  border: none;
+  background: transparent;
+  color: var(--tekst);
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.tiptap-toolbar .action-btn:hover {
+  background: var(--isticanje-svijetlo);
+  color: var(--tekst);
+}
+
+.tiptap-toolbar .action-btn.active {
+  background: var(--isticanje-svijetlo);
+  color: white;
+}oc
+
+.tiptap-toolbar .action-btn svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.ProseMirror {
+  padding: 1rem;
+  min-height: 200px;
+  background: var(--iznad);
+  color: var(--tekst);
+}
+
+.ProseMirror:focus {
+  outline: none;
+}
+
+.ProseMirror h1 {
+  font-size: 1.5em;
+  margin: 0.67em 0;
+}
+
+.ProseMirror h2 {
+  font-size: 1.3em;
+  margin: 0.75em 0;
+}
+
+.ProseMirror p {
+  margin: 1em 0;
+}
+
+.ProseMirror > *:first-child {
+  margin-top: 0;
+}
+
+.ProseMirror > *:last-child {
+  margin-bottom: 0;
+}
+
+.ProseMirror ul,
+.ProseMirror ol {
+  padding-left: 1.5em;
+  margin: 1em 0;
+}
+
+.ProseMirror li {
+  margin: 0.5em 0;
+}
+
+.ProseMirror [style*="text-align:center"] {
+  text-align: center;
+}
+
+.ProseMirror [style*="text-align:right"] {
+  text-align: right;
+}
+
+.ProseMirror [style*="text-align:left"] {
+  text-align: left;
+}

@@ -1,0 +1,103 @@
+.floating-action-btn {
+  position: fixed;
+  bottom: 5rem;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius);
+  background: rgb(var(--isticanje));
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+  z-index: 2;
+}
+
+.floating-action-btn:hover {
+  transform: scale(1.1);
+}
+
+.post-card {
+  background: var(--iznad);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.post-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.post-content {
+  margin-bottom: 1rem;
+  max-height: 200px;
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.3s ease-out;
+}
+
+.post-content.expanded {
+  max-height: none;
+}
+
+.show-more-btn {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(180deg, transparent, var(--background-light) 50%);
+  border: none;
+  color: rgb(var(--isticanje));
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+}
+
+.show-more-btn:hover {
+  color: rgb(var(--isticanje-hover));
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--background-light);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab.active {
+  background: rgb(var(--isticanje));
+  color: white;
+}

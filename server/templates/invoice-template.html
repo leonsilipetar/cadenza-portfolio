@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { width: 80%; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 20px; }
+        .header h1 { margin: 0; }
+        .invoice-details, .customer-details, .items, .summary, .footer { margin-bottom: 20px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 8px; }
+        th { background-color: #f2f2f2; }
+        .summary { text-align: right; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Invoice {{invoiceNumber}}</h1>
+        </div>
+        <div class="company-details">
+            <p>MUSIC ART INCUBATOR d.o.o.</p>
+            <p>IVANA GUNDULIĆA 5</p>
+            <p>OIB: 61044880248</p>
+            <p>IBAN: HR4223600001103086524</p>
+        </div>
+        <div class="customer-details">
+            <p><strong>Customer:</strong> {{customerName}}</p>
+            <p>{{customerAddress}}</p>
+        </div>
+        <div class="invoice-details">
+            <p><strong>Invoice Number:</strong> {{invoiceNumber}}</p>
+            <p><strong>Invoice Date:</strong> {{invoiceDate}}</p>
+            <p><strong>Due Date:</strong> {{dueDate}}</p>
+        </div>
+        <div class="items">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item Code</th>
+                        <th>Description</th>
+                        <th>Unit</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each items}}
+                    <tr>
+                        <td>{{this.code}}</td>
+                        <td>{{this.description}}</td>
+                        <td>{{this.unit}}</td>
+                        <td>{{this.quantity}}</td>
+                        <td>{{this.price}}</td>
+                        <td>{{this.total}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div class="summary">
+            <p><strong>Total:</strong> {{totalAmount}}</p>
+            <p><strong>VAT Exemption:</strong> PO ČLANKU 90.ST.2 ZAKONA O PDV-U, PODUZETNIK JE OSLOBOĐEN OD PDV-A</p>
+        </div>
+        <div class="footer">
+            <p><strong>Payment Method:</strong> Bank Transfer</p>
+            <p><strong>Operator:</strong> 1</p>
+            <p><strong>Issue Date:</strong> {{issueDate}}</p>
+            <p><strong>Time:</strong> {{issueTime}}</p>
+            <p><strong>Responsible Person:</strong> TIHANA BATOREK</p>
+            <p><strong>Reference Number:</strong> HR00 91-605-10</p>
+        </div>
+    </div>
+</body>
+</html>

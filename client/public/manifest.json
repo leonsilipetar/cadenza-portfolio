@@ -1,0 +1,70 @@
+{
+  "short_name": "Cadenza",
+  "name": "Cadenza App",
+  "description": "Music Learning Platform for Students and Mentors",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot-desktop.png",
+      "sizes": "2560x1600",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Cadenza Desktop View"
+    },
+    {
+      "src": "screenshot-mobile.png",
+      "sizes": "1440x2960",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Cadenza Android View"
+    }
+  ],
+  "id": "/",
+  "start_url": ".",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#FF9B00",
+  "background_color": "#323232",
+  "orientation": "portrait",
+  "categories": ["education", "music"],
+  "lang": "hr",
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Raspored",
+      "url": "/raspored",
+      "description": "View your schedule",
+      "icons": [{
+        "src": "raspored.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }]
+    },
+    {
+      "name": "Chat",
+      "url": "/chat",
+      "description": "Open chat",
+      "icons": [{
+        "src": "chat.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }]
+    }
+  ]
+}

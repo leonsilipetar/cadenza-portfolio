@@ -1,0 +1,307 @@
+.videoCallContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--iznad);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.loadingOverlay,
+.errorOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--iznad);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  z-index: 10000;
+}
+
+.loadingSpinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--iznad);
+  border-top: 5px solid rgba(var(--isticanje), 0.8);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.videoGrid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+  height: calc(100% - 120px); /* Account for controls height */
+}
+
+.videoBox {
+  position: relative;
+  background: var(--iznad);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  min-height: 0; /* Allow container to shrink */
+}
+
+.remoteVideo,
+.localVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.videoLabel {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--tekst);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: var(--iznad);
+  border-radius: 12px;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  min-width: 300px;
+}
+
+.mainControls,
+.musicControls {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.controlButton {
+  width: auto;
+  min-width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  border: none;
+  background: var(--iznad);
+  color: var(--tekst);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  padding: 0 16px;
+  gap: 8px;
+}
+
+.buttonLabel {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.controlButton:hover {
+  transform: scale(1.1);
+  background: var(--primarna-hover);
+}
+
+.controlButton.active {
+  background: var(--sekundarna);
+}
+
+.controlButton.endCall {
+  background: var(--error);
+  min-width: 64px;
+  height: 64px;
+  margin: 0 16px;
+  padding: 0 24px;
+}
+
+.controlButton.endCall:hover {
+  background: var(--error-hover);
+  transform: scale(1.1);
+}
+
+.controlButton.endCall svg {
+  width: 32px;
+  height: 32px;
+  color: var(--tekst);
+}
+
+.controlButton.endCall .buttonLabel {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.metronomeControl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--iznad);
+  padding: 8px;
+  border-radius: 24px;
+}
+
+.bpmInput {
+  width: 60px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--iznad);
+  color: var(--tekst);
+  text-align: center;
+}
+
+.bpmLabel {
+  color: var(--tekst);
+  font-size: 14px;
+}
+
+.latencyIndicator {
+  padding: 4px 8px;
+  background: var(--iznad);
+  border-radius: 4px;
+  color: var(--tekst);
+  font-size: 14px;
+}
+
+.videoCallButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--iznad);
+  color: var(--tekst);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 1000;
+}
+
+.videoCallButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.videoCallButton svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 768px) {
+  .videoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .controls {
+    padding: 10px;
+  }
+
+  .mainControls,
+  .musicControls {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.errorIcon {
+  width: 48px;
+  height: 48px;
+  color: var(--error);
+}
+
+.errorMessage {
+  color: var(--error);
+  font-size: 16px;
+  text-align: center;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.loadingOverlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  background: var(--iznad);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.loadingSpinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--tekst);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loadingOverlay p {
+  color: var(--tekst);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.loadingOverlay .controlButton.endCall {
+  margin-top: 1rem;
+  background: var(--error);
+  color: var(--tekst);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.loadingOverlay .controlButton.endCall:hover {
+  background: var(--error-hover);
+  transform: scale(1.05);
+}
+
+.loadingOverlay .controlButton.endCall .buttonLabel {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

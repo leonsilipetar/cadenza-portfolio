@@ -1,0 +1,18 @@
+{
+  "devDependencies": {
+    "sequelize-cli": "^6.6.2"
+  },
+  "dependencies": {
+    "@tiptap/extension-color": "^2.11.5",
+    "@tiptap/extension-font-family": "^2.11.5",
+    "@tiptap/extension-text-align": "^2.11.5",
+    "@tiptap/extension-text-style": "^2.11.5",
+    "@tiptap/extension-underline": "^2.11.5",
+    "@tiptap/pm": "^2.11.5",
+    "@tiptap/react": "^2.11.5",
+    "@tiptap/starter-kit": "^2.11.5",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.0",
+    "luxon": "^3.6.1"
+  }
+}

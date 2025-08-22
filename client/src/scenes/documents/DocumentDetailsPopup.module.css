@@ -1,0 +1,133 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.popup {
+  background-color: var(--iznad);
+  border-radius: var(--radius);
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--isticanje);
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.closeButton:hover {
+  color: var(--tekst);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.icon {
+  font-size: 2rem;
+  color: var(--isticanje);
+}
+
+.title {
+  margin: 0;
+  color: var(--tekst);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.label {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  min-width: 80px;
+}
+
+.value {
+  color: var(--tekst);
+  font-weight: 500;
+}
+
+.description {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+}
+
+.description h3 {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.description p {
+  color: var(--tekst);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--isticanje);
+  color: var(--tekst);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.actionButton:hover {
+  background-color: var(--isticanje3);
+  transform: translateY(-1px);
+}
+
+.actionButton svg {
+  font-size: 1.25rem;
+} 

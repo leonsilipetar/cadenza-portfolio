@@ -1,0 +1,1060 @@
+.documents-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.content-wrapper {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.document-edit-container,
+.document-view-container {
+  flex: 1;
+  overflow: auto;
+  padding: 1rem;
+  background: var(--pozadina);
+}
+
+.document-edit-header,
+.document-view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.document-name-input {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--pozadina);
+  color: var(--tekst);
+  width: 50%;
+}
+
+.document-view-header h2 {
+  font-size: 1.5rem;
+  color: var(--tekst);
+  margin: 0;
+}
+
+.document-edit-actions,
+.document-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.document-actions button,
+.document-edit-actions button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.save-button {
+  background: var(--primary);
+  color: white;
+}
+
+.save-button:hover {
+  background: var(--primary-dark);
+}
+
+.cancel-button {
+  background: var(--error);
+  color: white;
+}
+
+.cancel-button:hover {
+  background: var(--error-dark);
+}
+
+.edit-button {
+  background: var(--primary);
+  color: white;
+}
+
+.share-button {
+  background: var(--secondary);
+  color: white;
+}
+
+.download-button {
+  background: var(--success);
+  color: white;
+}
+
+.edit-button:hover,
+.share-button:hover,
+.download-button:hover {
+  filter: brightness(0.9);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .document-edit-header,
+  .document-view-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .document-name-input {
+    width: 100%;
+  }
+
+  .document-edit-actions,
+  .document-actions {
+    justify-content: space-between;
+  }
+}
+
+.documents-container .main {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* View Toggle */
+.view-toggle {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: var(--background-light);
+  border-radius: 10px;
+}
+
+.view-toggle .gumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.view-toggle .gumb.active {
+  background: var(--primary);
+  color: white;
+}
+
+/* Folder Path */
+.folder-path {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: var(--background-light);
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.path-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: none;
+  background: none;
+  color: var(--tekst);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.path-item:hover {
+  color: var(--primary);
+}
+
+.path-separator {
+  color: var(--tekst-light);
+}
+
+.file-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--isticanje-svijetlo) transparent;
+  width: 150px;
+}
+
+.file-title .icon {
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.file-title::-webkit-scrollbar {
+  height: 4px;
+}
+
+.file-title::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.file-title::-webkit-scrollbar-thumb {
+  background-color: var(--isticanje-svijetlo);
+  border-radius: 2px;
+}
+
+.file-title span {
+  display: inline-block;
+  min-width: 0;
+}
+
+.url-preview, .folder-preview {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: var(--background-lighter);
+  border-radius: 0.5rem;
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+
+.url-preview:hover, .folder-preview:hover {
+  background-color: var(--background-light);
+}
+
+.url-preview .icon, .folder-preview .icon {
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+/* Files Grid */
+.files-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.post-card {
+  background-color: var(--iznad);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.post-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.post-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+.abShare:hover {
+  color: rgb(var(--isticanje-svijetlo));
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--tekst);
+}
+
+/* File type specific styles */
+.file-card.url .iconify { color: var(--blue); }
+.file-card.pdf .iconify { color: var(--red); }
+.file-card.text .iconify { color: var(--green); }
+.file-card.notation .iconify { color: var(--purple); }
+.file-card.folder .iconify { color: var(--yellow); }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .files-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .view-toggle {
+    flex-wrap: wrap;
+  }
+
+  .file-actions {
+    opacity: 1;
+  }
+}
+
+/* Document Preview Styles */
+.document-preview {
+  margin: 20px 0;
+  padding: 20px;
+  background: var(--iznad);
+  border-radius: 8px;
+}
+
+.document-preview h4 {
+  margin: 0 0 10px 0;
+  color: var(--tekst);
+  font-size: 1rem;
+}
+
+.content-preview {
+  padding: 15px;
+  background: var(--iznad);
+  border-radius: 4px;
+  white-space: pre-wrap;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.url-preview {
+  padding: 10px;
+  background: var(--iznad);
+  border-radius: 4px;
+  word-break: break-all;
+}
+
+.url-preview a {
+  color: var(--isticanje-svijetlo);
+  text-decoration: none;
+}
+
+.url-preview a:hover {
+  text-decoration: underline;
+}
+
+/* Shared Users Styles */
+.shared-users {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.shared-user {
+  background: rgb(var(--isticanje2));
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: var(--tekst);
+}
+
+.text-preview {
+  max-height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  padding: 8px;
+  background-color: var(--iznad);
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.url-preview {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background-color: var(--iznad);
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.url-preview span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.folder-preview {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  color: var(--tekst);
+  opacity: 0.7;
+}
+
+.action-btn.abExpand:hover .hover-text {
+  opacity: 1;
+}
+
+/* Make sure the hover text appears above other elements */
+.action-btn.abExpand {
+  z-index: 1;
+}
+
+/* Ensure the file title text stays on one line */
+.file-title span {
+  display: inline-block;
+  min-width: 0;
+}
+
+/* Notation Editor Styles */
+.notation-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.notation-editor textarea {
+  font-size: 14px;
+  line-height: 1.5;
+  border: 1px solid var(--isticanje-svijetlo);
+}
+
+.notation-editor textarea:focus {
+  outline: none;
+  border-color: var(--isticanje-svijetlo);
+  box-shadow: 0 0 0 2px rgba(var(--isticanje2), 0.1);
+}
+
+.notation-preview {
+  width: 100%;
+  min-height: 150px;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  color: #333;
+}
+
+.notation-preview svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.notation-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.notation-text {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .notation-editor {
+    flex-direction: row;
+  }
+
+  .notation-editor textarea,
+  .notation-editor .notation-preview {
+    width: 50%;
+  }
+
+  .notation-view {
+    flex-direction: row;
+  }
+
+  .notation-text,
+  .notation-view .notation-preview {
+    width: 50%;
+  }
+}
+
+.notation-editor-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  color: #333;
+}
+
+/* Header with minimal height */
+.notation-editor-header {
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--iznad);
+  z-index: 1001;
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Main preview area - takes full screen */
+.notation-preview-large {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  padding: 1rem;
+  overflow: auto;
+  background: white;
+  margin: 0 auto;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .notation-preview-large {
+    width: 60%;
+    max-width: 60%;
+    margin: 0 auto;
+  }
+}
+
+/* Controls panel - fixed at bottom */
+.controls-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--iznad);
+  border-top: 1px solid var(--border);
+  padding: 1rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  max-height: 50vh;
+  overflow-y: auto;
+  z-index: 1001;
+}
+
+.controls-panel.visible {
+  transform: translateY(0);
+}
+
+/* Input methods container */
+.input-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Text editor */
+.notation-input-area {
+  display: none;
+  width: 100%;
+  height: 200px;
+  font-family: monospace;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--iznad);
+  color: var(--tekst);
+  resize: none;
+}
+
+/* Keyboard layout */
+.notation-keyboard-layout {
+  display: none;
+  width: 100%;
+  background: var(--iznad);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/* Show keyboard in keyboard mode */
+.keyboard-mode .notation-keyboard-layout {
+  display: block;
+}
+
+/* Show text input in text mode */
+:not(.keyboard-mode) .notation-input-area {
+  display: block;
+}
+
+/* Controls button */
+.controls-toggle {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1002;
+  padding: 0.85rem;
+  border-radius: 50%;
+  background-color: rgb(var(--isticanje));
+  color: var(--tekst);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.controls-toggle:hover {
+  transform: scale(1.1);
+}
+
+.controls-toggle.active {
+  background-color: rgb(var(--isticanje));
+}
+
+/* Notation controls styling */
+.notation-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.control-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.button-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  gap: 0.5rem;
+}
+
+.input-mode-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.input-mode-tabs .action-btn {
+  padding: 0.5rem 1rem;
+  flex: 1;
+}
+
+.input-mode-tabs .action-btn.active {
+  background: var(--primary);
+  color: white;
+}
+
+/* Style the keyboard mode layout */
+.notation-controls-wrapper {
+  background-color: var(--iznad);
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 300px;
+  overflow-y: auto;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .input-methods {
+    flex-direction: column;
+  }
+
+  .notation-keyboard-layout {
+    width: 100%;
+    display: none;
+  }
+
+  .notation-input-area {
+    display: none;
+  }
+
+  /* Show keyboard in keyboard mode */
+  .keyboard-mode .notation-keyboard-layout {
+    display: block;
+  }
+
+  /* Show textarea in text mode */
+  :not(.keyboard-mode) .notation-input-area {
+    display: block;
+  }
+}
+
+.text-editor-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: var(--iznad);
+  height: calc(100vh - 60px); /* Adjust for header height */
+  overflow-y: auto;
+}
+
+.text-editor-fullscreen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.text-editor-fullscreen .ql-container {
+  flex: 1;
+  overflow: auto;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.text-editor-fullscreen .ql-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--iznad-nav);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 8px 15px;
+  border-bottom: 1px solid var(--tekst);
+}
+
+.text-editor-fullscreen .ql-editor {
+  padding: 20px;
+  min-height: 100%;
+}
+.ql-snow .ql-tooltip{
+  background-color: var(--iznad);
+  color: var(--tekst);
+}
+
+/* Ensure the editor takes full height in fullscreen mode */
+.notation-editor-fullscreen {
+  display: flex;
+  flex-direction: column;
+}
+
+.notation-editor-fullscreen .text-editor-container {
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Ensure proper spacing in fullscreen mode */
+.notation-editor-fullscreen {
+  padding-top: 0;
+}
+
+.notation-editor-header {
+  padding: 1rem;
+  margin-bottom: 0;
+}
+
+/* Ensure the editor container doesn't overflow */
+.notation-editor-fullscreen > div {
+  max-height: calc(100vh - 60px);
+}
+
+.url-editor {
+  padding: 2rem;
+  background: var(--iznad-nav);
+  border-radius: 8px;
+  box-shadow: var(--boxShadow);
+}
+.url-display{
+  padding: 2rem;
+  background-color: var(--iznad);
+}
+ .url-display a{
+  color: rgb(var(--isticanje));
+}
+.url-editor label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: var(--tekst);
+}
+
+.url-editor input:focus {
+  outline: none;
+  border-color: var(--isticanje-svijetlo);
+  box-shadow: 0 0 0 2px rgba(var(--isticanje2), 0.1);
+}
+
+.tiptap-container {
+  border-radius: 4px;
+  background-color: var(--iznad);
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.tiptap-toolbar {
+  padding: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.tiptap-toolbar button {
+  padding: 0.5rem;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--tekst);
+  transition: all 0.2s ease;
+}
+
+.tiptap-toolbar button:hover {
+  background-color: var(--isticanje-svijetlo);
+}
+
+.tiptap-toolbar button.active {
+  background-color: rgb(var(--isticanje));
+  color: white;
+}
+
+.tiptap-editor {
+  flex: 1;
+  padding: 1rem;
+  min-height: 350px;
+  color: var(--tekst);
+}
+
+.tiptap-editor p {
+  margin: 1rem 0;
+}
+
+.tiptap-editor h1 {
+  font-size: 2em;
+  margin: 1rem 0;
+}
+
+.tiptap-editor h2 {
+  font-size: 1.5em;
+  margin: 1rem 0;
+}
+
+.tiptap-editor ul,
+.tiptap-editor ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.tiptap-editor:focus {
+  outline: none;
+}
+
+/* Placeholder styles */
+.tiptap-editor p.is-editor-empty:first-child::before {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.abc-instructions {
+  padding: 1.5rem;
+  color: var(--tekst);
+  max-width: 800px;
+  margin: 0 auto;
+  overflow-y: auto;
+  max-height: 60vh;
+}
+.abc-warnings{
+  color: rgb(var(--isticanje));
+}
+
+.instruction-section {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: var(--iznad);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border);
+}
+
+.instruction-section:last-child {
+  margin-bottom: 0;
+}
+
+.instruction-section h4 {
+  color: rgb(var(--isticanje));
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.instruction-section h4::before {
+  content: '♪';
+  font-size: 1.4rem;
+  color: rgb(var(--isticanje));
+}
+
+.instruction-section p {
+  margin: 0.75rem 0;
+  line-height: 1.6;
+  color: var(--tekst);
+  font-size: 0.95rem;
+}
+
+.instruction-section pre {
+  background: var(--pozadina);
+  padding: 1rem;
+  border-radius: 6px;
+  font-family: monospace;
+  margin: 0.75rem 0;
+  white-space: pre-wrap;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border: 1px solid var(--border);
+  color: rgb(var(--isticanje));
+}
+
+/* Scrollbar styling for the instructions */
+.abc-instructions::-webkit-scrollbar {
+  width: 8px;
+}
+
+.abc-instructions::-webkit-scrollbar-track {
+  background: var(--pozadina);
+  border-radius: 4px;
+}
+
+.abc-instructions::-webkit-scrollbar-thumb {
+  background: var(--isticanje-svijetlo);
+  border-radius: 4px;
+}
+
+.abc-instructions::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--isticanje));
+}
+
+/* Mobile responsiveness for instructions */
+@media (max-width: 768px) {
+  .abc-instructions {
+    padding: 1rem;
+    max-height: 70vh;
+  }
+
+  .instruction-section {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .instruction-section h4 {
+    font-size: 1.1rem;
+  }
+
+  .instruction-section p {
+    font-size: 0.9rem;
+  }
+
+  .instruction-section pre {
+    font-size: 0.85rem;
+    padding: 0.75rem;
+  }
+}
+
+.audio-controls {
+  position: fixed;
+  bottom: 80px;  /* Position above the controls toggle button */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 15px;
+  background-color: var(--iznad);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+}
+
+.audio-controls .abcjs-inline-audio {
+  height: auto;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.audio-controls .abcjs-btn {
+  background-color: rgb(var(--isticanje));
+  color: var(--tekst);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  min-width: 80px;
+  text-align: center;
+}
+.abcjs-btn svg{
+  color: var(--tekst);
+  width: 1rem;
+  height: 1rem;
+}
+
+.audio-controls .abcjs-btn:hover {
+  background-color: rgba(var(--isticanje), 0.9);
+}
+
+.audio-controls .abcjs-midi-progress-background {
+  background-color: rgba(var(--isticanje), 0.4);
+  height: 10px;
+  border-radius: 5px;
+  margin: 0 10px;
+  flex-grow: 1;
+  min-width: 100px;
+}
+
+.audio-controls .abcjs-midi-progress-indicator {
+  background-color: rgb(var(--isticanje));
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.1s linear;
+}
+
+.audio-controls .abcjs-midi-selection {
+  background-color: rgba(var(--isticanje), 0.1);
+}
+
+.audio-controls .abcjs-midi-loop {
+  background-color: rgba(var(--isticanje), 0.2);
+  padding: 0 8px;
+  margin: 0 4px;
+  border-radius: 4px;
+}
+
+/* Highlight current note */
+.abcjs-note_selected {
+  fill: rgb(var(--isticanje)) !important;
+}
+
+/* Mobile responsiveness for audio controls */
+@media (max-width: 768px) {
+  .audio-controls {
+    width: 95%;
+    padding: 10px;
+    bottom: 70px;
+  }
+
+  .audio-controls .abcjs-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    min-width: 60px;
+  }
+}

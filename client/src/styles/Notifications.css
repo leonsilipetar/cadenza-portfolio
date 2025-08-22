@@ -1,0 +1,120 @@
+.notification-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  background-color: rgb(var(--pozadina-svijetlo));
+  border: 1px solid rgb(var(--pozadina-tamno), 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn.active {
+  background-color: rgb(var(--isticanje));
+  color: rgb(var(--pozadina-svijetlo));
+}
+
+.mark-all-read-btn {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  background-color: rgb(var(--pozadina-svijetlo));
+  border: 1px solid rgb(var(--pozadina-tamno), 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mark-all-read-btn:hover {
+  background-color: rgb(var(--pozadina-tamno), 0.05);
+}
+
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.notification-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: var(--radius);
+  background-color: rgb(var(--pozadina-svijetlo));
+  border: 1px solid rgb(var(--pozadina-tamno), 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.notification-item:hover {
+  background-color: rgb(var(--pozadina-tamno), 0.05);
+}
+
+.notification-item.unread {
+  background-color: rgba(var(--isticanje), 0.05);
+}
+
+.notification-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: rgb(var(--pozadina-tamno), 0.1);
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.notification-message {
+  color: rgb(var(--pozadina-tamno), 0.8);
+  margin-bottom: 0.5rem;
+}
+
+.notification-time {
+  font-size: 0.8rem;
+  color: rgb(var(--pozadina-tamno), 0.6);
+}
+
+.unread-indicator {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: rgb(var(--isticanje));
+}
+
+.no-notifications {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: rgb(var(--pozadina-tamno), 0.6);
+}
+
+.no-notifications svg {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+} 

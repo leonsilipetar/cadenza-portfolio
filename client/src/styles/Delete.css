@@ -1,0 +1,179 @@
+.delete-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Search functionality */
+.delete-search {
+  margin: 1.5rem 0;
+  background: rgb(var(--iznad));
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid rgb(var(--obrub));
+}
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  color: rgb(var(--tekst-blagi));
+  font-size: 1.2rem;
+  z-index: 1;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 45px 12px 40px;
+  border: 1px solid rgb(var(--obrub));
+  border-radius: 8px;
+  background: var(--iznad-nav);
+  color: rgb(var(--tekst));
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: rgb(var(--isticanje));
+  box-shadow: 0 0 0 3px rgba(var(--isticanje), 0.1);
+}
+
+.search-input::placeholder {
+  color: rgb(var(--tekst-blagi));
+}
+
+.clear-search {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  color: rgb(var(--tekst-blagi));
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clear-search:hover {
+  color: rgb(var(--tekst));
+  background: rgba(var(--obrub), 0.5);
+}
+
+.search-results-count {
+  margin-top: 0.75rem;
+  color: rgb(var(--tekst-blagi));
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Enhanced table styles */
+.tr.naziv .th {
+  font-weight: 600;
+  color: rgb(var(--tekst));
+  background: rgba(var(--isticanje), 0.1);
+}
+
+.user-name, .username, .email, .oib {
+  display: block;
+  color: rgb(var(--tekst));
+}
+
+.username {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+.email {
+  font-size: 0.9rem;
+  color: rgb(var(--tekst-blagi));
+}
+
+.current-user-label {
+  color: rgb(var(--isticanje));
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 4px 8px;
+  background: rgba(var(--isticanje), 0.1);
+  border-radius: 4px;
+}
+
+.abDelete {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  background: rgba(var(--greska), 0.9);
+  color: var(--tekst);
+  border: 1px solid rgba(var(--greska), 0.9);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.abDelete:hover {
+  background: rgba(var(--greska), 0.2);
+  border-color: rgba(var(--greska), 0.5);
+}
+
+.no-results {
+  text-align: center;
+  padding: 2rem;
+  color: rgb(var(--tekst-blagi));
+  font-style: italic;
+}
+
+.tab {
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--background-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab.active {
+  background: rgb(var(--isticanje));
+  color: white;
+}
+
+
+.warning {
+  color: #dc3545;
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.btn-cancel {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--background-light);
+  cursor: pointer;
+}
+
+.btn-delete {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--radius);
+  background: #dc3545;
+  color: white;
+  cursor: pointer;
+}

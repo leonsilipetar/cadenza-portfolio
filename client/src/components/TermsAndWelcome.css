@@ -1,0 +1,99 @@
+.welcome-modal{
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.modal h2 {
+  color: var(--tekst);
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.modal h3 {
+  color: var(--tekst);
+  margin: 1.5rem 0 1rem 0;
+  font-size: 1.4rem;
+}
+
+
+.terms-content, .welcome-content {
+  margin-bottom: 2rem;
+}
+
+.terms-content p, .welcome-content p {
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+.terms-content ul, .welcome-content ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.terms-content li, .welcome-content li {
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+
+.help-text {
+  font-style: italic;
+  color: var(--tekst-secondary);
+  margin-top: 2rem;
+}
+
+.accept-button, .close-button {
+  display: block;
+  width: 100%;
+  padding: 1.2rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.terms-modal .action-btn {
+  margin-bottom: 25px;
+}
+
+.accept-button:hover, .close-button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Scrollbar styling */
+.modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal::-webkit-scrollbar-track {
+  background: var(--pozadina);
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+.modal::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+@media (max-width: 600px) {
+  .modal {
+    padding: 1.5rem;
+    width: 95%;
+  }
+
+  .modal h2 {
+    font-size: 1.5rem;
+  }
+
+  .modal h3 {
+    font-size: 1.2rem;
+  }
+}

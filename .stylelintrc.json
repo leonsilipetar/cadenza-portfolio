@@ -1,0 +1,17 @@
+{
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-prettier"
+    ],
+    "plugins": [
+      "stylelint-order"
+    ],
+    "rules": {
+      "no-duplicate-selectors": true,
+      "no-descending-specificity": null,
+      "order/properties-alphabetical-order": true
+    },
+    "ignoreFiles": [
+      "**/node_modules/**"
+    ]
+  }
